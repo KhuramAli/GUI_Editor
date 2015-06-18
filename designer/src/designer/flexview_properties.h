@@ -27,6 +27,7 @@ class flexview_properties : public QDialog
 
 public:
     flexview_properties(QWidget *parent = 0);
+    ~flexview_properties();
     static QString getClassName();
     void clear();
     void setWidgetName(QWidget *current);

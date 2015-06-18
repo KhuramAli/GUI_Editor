@@ -2,6 +2,7 @@
 #include "new_property.h"
 #include "remove_property.h"
 
+#include <memory>
 #include <QLabel>
 #include <QCheckBox>
 #include <QComboBox>
@@ -114,6 +115,30 @@ loadLayoutSettings();
 stackArea->setCurrentWidget(tempwidget);
 }
 
+flexview_properties::~flexview_properties()
+{
+   delete widgetname;
+   delete newProperty;
+   delete removeProperty;
+
+   delete tempwidget;
+   delete buttonProperties;
+   delete formProperties;
+   delete mainwindowProperties;
+   delete dialogProperties;
+   delete checkboxProperties;
+   delete textboxProperties;
+   delete comboboxProperties;
+   delete labelProperties;
+   delete calanderProperties;
+   delete mtexteditProperties;
+   delete tableProperties;
+   delete layoutProperties;
+
+   delete stackArea;
+   delete scrollArea;
+   delete mainLayout;
+}
 
 void flexview_properties::clear()
 {
@@ -1341,6 +1366,7 @@ for(int i = 0; i < stackedWidget->children().size(); i++){
             }
     }
   }
+
 }
 
 void flexview_properties::updateList()
@@ -1378,4 +1404,5 @@ if (stackWidget->objectName() == currentWidget->metaObject()->className()){
        }
 }
 }
+
 }
